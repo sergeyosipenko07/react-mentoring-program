@@ -1,0 +1,13 @@
+.film-container {
+  &__poster {
+    img {
+      width: 320px;
+      height: 480px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+  }
+}

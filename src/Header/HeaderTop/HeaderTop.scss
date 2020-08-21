@@ -1,0 +1,21 @@
+.header-top-line {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+  color: #f1505f;
+
+  &__title {
+    z-index: 3;
+  }
+
+  &__add-film-button {
+    width: 170px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    text-align: center;
+    line-height: 40px;
+    z-index: 3;
+  }
+}

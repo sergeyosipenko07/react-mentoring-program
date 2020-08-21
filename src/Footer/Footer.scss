@@ -1,0 +1,10 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #424242;
+
+  &__title {
+    color: #f1505f;
+  }
+}

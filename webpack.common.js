@@ -7,11 +7,18 @@ const prod = require('./webpack.prod.js');
 
 const env = process.env.NODE_ENV.trim();
 
+const PATH = {
+    SRC: path.join(__dirname, '/src'),
+    DIST: path.join(__dirname, '/dist'),
+    FONTS: path.join(__dirname, '/dist/fonts'),
+    ASSETS: path.join(__dirname, '/assets')
+};
+
 const common = {
     mode: env,
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: PATH.DIST,
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -36,6 +43,25 @@ const common = {
                     }
                 ]
             },
+            {
+                test: /\.(svg)$/i,
+                use: [
+                    {
+                        loader: 'babel-loader'
+                    },
+                    {
+                        loader: 'react-svg-loader',
+                        options: {
+                            tsx: true
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(jpe?g|png|gif)$/i,
+                loader: 'file-loader',
+                options: { name: 'assets/images/[name].[ext]' }
+            }
         ]
     },
 };
